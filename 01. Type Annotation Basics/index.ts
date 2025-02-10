@@ -84,3 +84,46 @@ const subtract = (a: number, b: number): number => a - b;
 
 const res2 = subtract(5, 2);
 console.log(res2);
+
+// Void
+
+/**
+ * represents absense of a value
+ * used as a return type for functions that do not return a value 
+ */
+
+function printMessage(message: string): void {
+    console.log(message);
+}
+
+// Never
+/**
+ * indicates a function will not return anything or a var can never have a value
+ * 
+ * Use cases (certain code paths should never be reached, certain values are impossible)
+ * Helps catch bugs at compile time instead not run time 
+ * 
+ * 1. A function that always throws an error 
+ * 2. A function that has an infinite loop
+ * 3. A var that can never have any value 
+ */
+
+// case 1 -> a function that always throws an error -> it should never have a reachable endpoint 
+function throwError(msg: string): never {
+    throw new Error(msg);
+}
+
+// case 2: -> a function that has an infinite loop 
+
+function infinitLoop(): never {
+    while (true) {}
+}
+
+// case 3: a var that can never have a var
+let x: never;
+
+function neverReturns(): never {
+    while (true) {}
+}
+
+x = neverReturns()
