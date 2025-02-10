@@ -6,11 +6,11 @@
  */
 
 class Person {
-    name: string;
+    // name: string;
     age: number;
 
     // readonly properties
-    // readonly name: string;
+    readonly name: string;
 
     constructor(name: string, age: number) {
         this.name = name;
